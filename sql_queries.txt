@@ -1,0 +1,25 @@
+Q5. Which brand has the most spend among users who were created within the past 6 months?
+
+SELECT SUM(purchasedItems.finalPrice) FROM purchasedItems
+JOIN transactions
+ON purchasedItems.barcode = transactions.barcode
+JOIN brands
+ON brands.brandCode = purchasedItems.brandCode
+JOIN users
+ON users._id = transactions.userId
+WHERE users.createdDate >= DATEADD(MONTH, DATEDIFF(MONTH, 0, DATEADD(m, -6, current_timestamp)), 0)
+GROUP BY brands.brandCode
+ORDER BY SUM(purchasedItems.finalPrice) DESC;
+
+Q6. Which brand has the most transactions among users who were created within the past 6 months?
+
+SELECT COUNT(purchasedItems.barcode) FROM purchasedItems
+JOIN transactions
+ON purchasedItems.barcode = transactions.barcode
+JOIN brands
+ON brands.brandCode = purchasedItems.brandCode
+JOIN users
+ON users._id = transactions.userId
+WHERE users.createdDate >= DATEADD(MONTH, DATEDIFF(MONTH, 0, DATEADD(m, -6, current_timestamp)), 0)
+GROUP BY brands.brandCode
+ORDER BY COUNT(purchasedItems.barcode) DESC;

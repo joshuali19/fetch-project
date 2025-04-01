@@ -1,0 +1,16 @@
+Subject Line: Fetch Data Discussion 
+
+Hello Bob,
+
+I'm currently working on a project seeking to understand the buying habits of users on our platform, given their receipts data. I was hoping to discuss some questions with your team to better understand the data, and see how we can help each other give more actionable value to the customer through this analysis.
+
+Questions:
+1. What are some pressing issues on your mind with regards to our users?
+2. Have you considered what additional inputs you would need to solve this problem?
+
+As it currently stands, I have looked at the data on file. It's a good start, and I am looking to add onto it. I've noticed some data quality issues -- primarily the plethora of null values -- through Python. I would love to discuss a plan to resolve this when we meet. How should we address null values in Column A, B, C? Which ones are of utmost importance? How can we change it? Would love to discuss it more in our meeting.
+
+Moving on, I also have potential concerns for performance and scaling, particularly with the receipts database, given that there may be busy periods with high shopper traffic. I plan to implement a batch processing job, with scheduled data migrations to move older receipts to a more appropriate storage solution (nearline storage). 
+
+Looking forward to having our meeting to discuss more about this project,
+Josh
